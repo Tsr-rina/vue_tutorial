@@ -1,6 +1,12 @@
 // コンストラクタ関数Vueを使ってルートインスタンスを作成する
 // アプリケーションで使用したいデータはdataオプションへ登録していく
 
+// todo-itemよ呼ばれる新しいコンポーネントを定義
+Vue.component('todo-item',{
+    props: ["todo"],
+    template: '<li>{{ todo.text }}</li>'
+})
+
 const app = new Vue({
     el: '#app',
     data: {
@@ -44,3 +50,25 @@ var app5 = new Vue({
         }
     }
 })
+
+var app6 = new Vue({
+    el:'#app-6',
+    data: {
+        message:'Hello Vue!'
+    }
+})
+
+var app7 = new Vue({
+    el: '#app-7',
+    data: {
+        groceryList:[
+            { id:0, text:'Vegetable'},
+            { id:1, text:'Chese' },
+            { id:2, text:"Whatever else humans are supposed to eat "}
+        ]
+    }
+})
+
+
+
+

@@ -30,6 +30,7 @@
                     {{ todo.id}}
 
                 </li>
+                <todo-item></todo-item>
             </ol>
 
         </div>
@@ -37,6 +38,19 @@
         <div id="app-5">
             <p>{{ message }}</p>
             <button v-on:click="reverseMessage">Reverse Message</button>            
+        </div>
+
+        <div id="app-6">
+            <p>{{ message }}</p>
+            <input v-model='message'>
+        </div>
+
+        <div id="app-7">
+            <ol>
+
+            </ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
