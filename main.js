@@ -2,13 +2,25 @@
 // アプリケーションで使用したいデータはdataオプションへ登録していく
 
 // todo-itemよ呼ばれる新しいコンポーネントを定義
+// グローバルに定義する
 Vue.component('todo-item',{
+    // Props→親コンポーネントから子コンポーネントに文字列、数値、配列やオブジェクトをなどの値を渡すことができる
     props: ["todo"],
     template: '<li>{{ todo.text }}</li>'
 })
 
+var data = { a:1 }
+
+// 以下で設定すればデータの変更はされなくなる
+// Object.freeze(data)
+
+// vue関数で新しいVueインスタンスを作成することによって起動する
+var vm = new Vue({
+    data:data
+})
+
 const app = new Vue({
-    el: '#app',
+    el: '#app-1',
     data: {
         message: 'Hello Vue!'
     },
@@ -66,6 +78,17 @@ var app7 = new Vue({
             { id:1, text:'Chese' },
             { id:2, text:"Whatever else humans are supposed to eat "}
         ]
+    }
+})
+
+var myComponent = {
+    template: '<p>MyLocalComponent</p>'
+}
+
+new Vue({
+    el:'#local-component',
+    components:{
+        'my-component': myComponent
     }
 })
 
