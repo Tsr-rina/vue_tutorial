@@ -7,7 +7,7 @@
     </head>
 
     <body>
-        <div id="app">
+        <div id="app-1">
             {{ message }}
         </div>
 
@@ -51,6 +51,18 @@
             </ol>
             <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
 
+        </div>
+
+        <div id="local-component">
+            <my-component></my-component>
+        </div>
+
+        <div id="app">
+            <app-nav></app-nav>
+            <app-view>
+              <app-sidebar></app-sidebar>
+              <app-content></app-content>
+            </app-view>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
